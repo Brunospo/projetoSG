@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './views/Home'
+import Login from './views/Login'
 
 export default function App() {
 
@@ -12,8 +13,24 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen
+         name="Home" 
+         component={Home}
+         options={{
+          title: 'Safe Girl',
+          headerStyle: {
+            backgroundColor: '#AF3563',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerTitleAlign: 'center'
+        }}  
+         />
+        <Stack.Screen name="Login" component={Login} />
       </Stack.Navigator>
+      <StatusBar style="auto" />
     </NavigationContainer>
   );
 }
