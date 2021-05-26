@@ -8,9 +8,15 @@ export default function Home(props){
         <View style={styles.container}>
             <ImageBackground source={bgImage} style={styles.backgroundImage}>
             <Button
-                buttonStyle={styles.button} 
-                title='Play' 
-                onPress={()=>props.navigation.navigate('Login')}>
+                buttonStyle={styles.button}
+                icon={{
+                    name: "arrow-right",
+                    size: 50,
+                    color: "white",
+                    padding: 1
+                  }} 
+                // title='Play'
+                onPress={()=>props.navigation.navigate('Menu')}>
             </Button>
             <Text style={styles.text}>Feito pra te manter segura.</Text>
             <Text style={styles.text}>Para onde quer que vá!</Text>
@@ -35,12 +41,13 @@ const styles = StyleSheet.create({
     },
     button:{
         backgroundColor: 'rgb(198,48,41)',
-        borderRadius: 40,
-        padding: 15,
+        borderRadius: 60,
+        // padding: 20,
     },
     text:{
         fontSize:18,
         top:150,
+        // fontFamily:'Raleway-Thin',
         color:'white'
     }
   });
