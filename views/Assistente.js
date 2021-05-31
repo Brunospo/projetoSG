@@ -1,12 +1,12 @@
 import React from 'react';
-import { Text, View, ImageBackground, StyleSheet } from 'react-native';
+import { Text, View, ImageBackground, StyleSheet, Linking } from 'react-native';
 import bgImage from '../assets/menu.png'
 
 export default function Assistente(props){
     return(
         <View style={styles.container}>
             <ImageBackground source={bgImage} style={styles.backgroundImage}>
-            <Text>Em breve...</Text>
+            <Text onPress={()=>{Linking.openURL('tel:180');}} style={styles.funcNavText}>180</Text>
             </ImageBackground>
         </View>
     )
@@ -25,5 +25,12 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
         height: null,
         width:'100%',
+    },
+    funcNavText:{
+        backgroundColor: 'rgb(198,48,41)',
+        borderRadius: 60,
+        padding: 30,
+        color: 'white',
+        fontSize:16
     }
   });
